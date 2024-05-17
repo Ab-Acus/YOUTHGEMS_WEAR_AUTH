@@ -8,6 +8,8 @@ import 'package:go_router/go_router.dart';
 import 'package:youthgems_wear_auth/themes/text_theme.dart';
 import 'package:http/http.dart' as http;
 
+import '../widgets/custom_text_field.dart';
+
 class AuthenticationPage extends StatefulWidget {
   final String authRequest;
 
@@ -43,69 +45,59 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
   Widget build(BuildContext context) {
     final responsiveImageWidth = MediaQuery.of(context).size.width * 0.5;
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Form(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Align(
-                alignment: Alignment.center,
-                child: Image.asset("assets/logo_youthgems.png",
-                    width:
-                        responsiveImageWidth > 500 ? 500 : responsiveImageWidth,
-                    fit: BoxFit.fitWidth),
-              ),
-              Text(
-                'YouthGEMs Wear Auth',
-                style: textTheme.titleLarge,
-              ),
-              const SizedBox(height: 18),
-              TextFormField(
-                controller: usernameController,
-                decoration: const InputDecoration(
-                  hintText: 'Enter your username',
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Form(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.center,
+                  child: Image.asset("assets/logo_youthgems.png",
+                      width:
+                          responsiveImageWidth > 500 ? 500 : responsiveImageWidth,
+                      fit: BoxFit.fitWidth),
                 ),
-              ),
-              const SizedBox(height: 18),
-              TextFormField(
-                controller: passwordController,
-                obscureText: isPasswordObscured,
-                decoration: InputDecoration(
+                Text(
+                  'YouthGEMs Wear Auth',
+                  style: textTheme.titleLarge,
+                ),
+                const SizedBox(height: 18),
+                CustomTextField(
+                  controller: usernameController,
+                  hintText: 'Enter your username',
+                  labelText: 'Username',
+                ),
+                const SizedBox(height: 18),
+                CustomTextField(
+                  controller: passwordController,
+                  obscureText: isPasswordObscured,
+                  labelText: 'Password',
                   hintText: 'Enter your password',
-                  suffix: IconButton(
-                    icon: Icon(isPasswordObscured
-                        ? Icons.visibility
-                        : Icons.visibility_off),
-                    onPressed: () {
-                      setState(() {
-                        isPasswordObscured = !isPasswordObscured;
-                      });
+                ),
+                const SizedBox(height: 18),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: ElevatedButton(
+                    onPressed: () async {
+                      final success = await authenticate();
+                      if(!context.mounted){
+                        return;
+                      }
+                      if (success) {
+                        context.replace('/${widget.authRequest}/success');
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                            content: Text(
+                                'There was an error.\nPlease check your credentials and try again.')));
+                      }
                     },
+                    child: const Text('Login'),
                   ),
                 ),
-              ),
-              const SizedBox(height: 18),
-              Align(
-                alignment: Alignment.centerRight,
-                child: ElevatedButton(
-                  onPressed: () async {
-                    final success = await authenticate();
-                    if(!context.mounted){
-                      return;
-                    }
-                    if (success) {
-                      context.replace('/${widget.authRequest}/success');
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                          content: Text(
-                              'There was an error.\nPlease check your credentials and try again.')));
-                    }
-                  },
-                  child: const Text('Login'),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

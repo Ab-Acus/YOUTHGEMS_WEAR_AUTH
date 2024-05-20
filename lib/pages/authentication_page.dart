@@ -27,7 +27,7 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
 
   Future<bool> authenticate() async {
     String basicAuth =
-        'Basic ${base64Encode(utf8.encode('${usernameController.text}:${passwordController.text}'))}';
+        'Basic ${base64Encode(utf8.encode('${usernameController.text.trim()}:${passwordController.text}'))}';
     var headers = {
       'auth-request': widget.authRequest,
       'Authorization': basicAuth,

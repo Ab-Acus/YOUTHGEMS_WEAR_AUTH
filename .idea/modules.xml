@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/youthgems_wear_auth.iml" filepath="$PROJECT_DIR$/youthgems_wear_auth.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/youthgems_wear_auth_android.iml" filepath="$PROJECT_DIR$/android/youthgems_wear_auth_android.iml" />
     </modules>
   </component>
 </project>

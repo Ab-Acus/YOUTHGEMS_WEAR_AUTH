@@ -1,0 +1,14 @@
+{
+    "wearAuthPage": "Kantava autentimise leht",
+    "insertCredentials": "Sisestage oma sisselogimisandmed",
+    "username": "Kasutajanimi",
+    "enterUsername": "Sisestage oma kasutajanimi",
+    "password": "Salasõna",
+    "enterPassword": "Sisestage oma salasõna",
+    "errorCredentials": "Tekkis viga.\nPalun kontrollige oma andmeid ja proovige uuesti.",
+    "login": "Logi sisse",
+    "success": "Õnnestus!",
+    "useWearApp": "Nüüd saate rakendust oma kantaval seadmel kasutada. ",
+    "notFound": "Ei leitud",
+    "unexistingPage": "Otsitavat lehte ei eksisteeri."
+}

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class NotFoundPage extends StatelessWidget {
@@ -18,11 +19,10 @@ class NotFoundPage extends StatelessWidget {
                 color: Theme.of(context).colorScheme.error,
               ),
               Text(
-                'Not Found',
+                'notFound'.tr(),
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
-              const Text("The page you are looking for does not exist.",
-                  textAlign: TextAlign.center)
+              Text('unexistingPage'.tr(), textAlign: TextAlign.center)
             ],
           ),
         ),

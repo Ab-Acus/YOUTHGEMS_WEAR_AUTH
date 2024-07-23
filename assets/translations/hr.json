@@ -1,0 +1,14 @@
+{
+    "wearAuthPage": "Stranica za autentifikaciju nosivih uređaja",
+    "insertCredentials": "Unesite svoje vjerodajnice za prijavu",
+    "username": "Korisničko ime",
+    "enterUsername": "Unesite svoje korisničko ime",
+    "password": "Lozinka",
+    "enterPassword": "Unesite svoju lozinku",
+    "errorCredentials": "Došlo je do pogreške.\nMolimo provjerite svoje vjerodajnice i pokušajte ponovno.",
+    "login": "Prijavi se",
+    "success": "Uspeh!",
+    "useWearApp": "Sada možete koristiti aplikaciju na svom nosivom uređaju.",
+    "notFound": "Nije pronađeno",
+    "unexistingPage": "Stranica koju tražite ne postoji."
+}

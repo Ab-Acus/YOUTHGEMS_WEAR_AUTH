@@ -1,0 +1,14 @@
+{
+    "wearAuthPage": "Wearable authentication page",
+    "insertCredentials": "Insert your credentials to login",
+    "username": "Username",
+    "enterUsername": "Enter your username",
+    "password": "Password",
+    "enterPassword": "Enter your password",
+    "errorCredentials": "There was an error.\nPlease check your credentials and try again.",
+    "login": "Login",
+    "success": "Success!",
+    "useWearApp": "You can now use the app on your wearable device.",
+    "notFound": "Not Found",
+    "unexistingPage": "The page you are looking for does not exist."
+}

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:youthgems_wear_auth/themes/text_theme.dart';
 
@@ -19,10 +20,10 @@ class SuccessPage extends StatelessWidget {
                 color: Theme.of(context).colorScheme.primary,
               ),
               Text(
-                'Success!',
+                'success'.tr(),
                 style: textTheme.headlineMedium,
               ),
-              const Text("You can now use the app on your wearable device.", textAlign: TextAlign.center)
+              Text('useWearApp'.tr(), textAlign: TextAlign.center)
             ],
           ),
         ),

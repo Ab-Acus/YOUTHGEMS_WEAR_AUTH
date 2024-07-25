@@ -40,7 +40,10 @@ ThemeData lightTheme = ThemeData(
   textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(textStyle: textTheme.labelMedium)),
   inputDecorationTheme: InputDecorationTheme(
-    labelStyle: textTheme.labelMedium,
+    labelStyle: textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
+    hintStyle: textTheme.bodyMedium!.copyWith(
+        color: lightColorScheme.secondary, fontWeight: FontWeight.normal),
+    helperStyle: textTheme.bodyMedium,
     suffixIconColor: lightColorScheme.primary,
     contentPadding:
         const EdgeInsets.only(left: 20, right: 20, top: 15, bottom: 15),
@@ -101,8 +104,9 @@ ThemeData darkTheme = ThemeData(
     padding: const EdgeInsets.only(left: 8, right: 8, top: 8, bottom: 8),
   )),
   inputDecorationTheme: InputDecorationTheme(
-    labelStyle: textTheme.bodyMedium,
-    hintStyle: textTheme.bodyMedium,
+    labelStyle: textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
+    hintStyle: textTheme.bodyMedium!.copyWith(
+        color: darkColorScheme.secondary, fontWeight: FontWeight.normal),
     helperStyle: textTheme.bodyMedium,
     suffixIconColor: darkColorScheme.primary,
     contentPadding:

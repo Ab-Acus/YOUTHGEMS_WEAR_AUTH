@@ -1,0 +1,14 @@
+{
+    "wearAuthPage": "Pukeutuvan laitteen tunnistautumissivu",
+    "insertCredentials": "Syötä kirjautumistietosi",
+    "username": "Käyttäjänimi",
+    "enterUsername": "Syötä käyttäjänimesi",
+    "password": "Salasana",
+    "enterPassword": "Syötä salasanasi",
+    "errorCredentials": "Tapahtui virhe.\nTarkista kirjautumistietosi ja yritä uudelleen.",
+    "login": "Kirjaudu sisään",
+    "success": "Onnistui!",
+    "useWearApp": "Voit nyt käyttää sovellusta pukeutuvassa laitteessasi.",
+    "notFound": "Ei löytynyt",
+    "unexistingPage": "Etsimääsi sivua ei ole olemassa."
+}

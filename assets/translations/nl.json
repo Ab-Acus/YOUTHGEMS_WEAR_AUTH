@@ -1,0 +1,14 @@
+{
+    "wearAuthPage": "Draagbare authenticatiepagina ",
+    "insertCredentials": "Voer uw inloggegevens in",
+    "username": "Gebruikersnaam",
+    "enterUsername": "Voer uw gebruikersnaam in",
+    "password": "Wachtwoord",
+    "enterPassword": "Voer uw wachtwoord in",
+    "errorCredentials": "Er is een fout opgetreden.\nControleer uw inloggegevens en probeer het opnieuw.",
+    "login": "Inloggen",
+    "success": "Succes!",
+    "useWearApp": "U kunt de app nu op uw draagbare apparaat gebruiken.",
+    "notFound": "Niet gevonden",
+    "unexistingPage": "De pagina die u zoekt bestaat niet."
+}

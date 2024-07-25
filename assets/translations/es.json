@@ -1,0 +1,14 @@
+{
+    "wearAuthPage": "Página de autenticación de dispositivos portátiles",
+    "insertCredentials": "Ingrese sus credenciales para iniciar sesión",
+    "username": "Nombre de usuario/a",
+    "enterUsername": "Ingrese su nombre de usuario/a",
+    "password": "Contraseña",
+    "enterPassword": "Ingrese su contraseña",
+    "errorCredentials": "Hubo un error.\nPor favor, verifique sus credenciales y vuelva a intentarlo.",
+    "login": "Entrar",
+    "success": "¡Éxito!",
+    "useWearApp": "Ahora puede usar la aplicación en su dispositivo portátil.",
+    "notFound": "No encontrado",
+    "unexistingPage": "La página que está buscando no existe."
+}

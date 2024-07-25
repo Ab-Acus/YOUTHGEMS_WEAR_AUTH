@@ -61,11 +61,9 @@ class CustomTextFieldState extends State<CustomTextField> {
         prefixIcon: Icon(widget.icon),
         suffixIcon: widget.obscureText
             ? IconButton(
-                icon: Icon(_obscured ? Icons.visibility : Icons.visibility_off,
-                    semanticLabel: _obscured
-                        ? 'enableTextVizSemantic'
-                        : 'obscureTextSemantic',
-                    ),
+                icon: Icon(
+                  _obscured ? Icons.visibility : Icons.visibility_off,
+                ),
                 onPressed: () {
                   setState(() {
                     _obscured = !_obscured;

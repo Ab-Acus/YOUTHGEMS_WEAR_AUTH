@@ -1,9 +1,8 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:youthgems_wear_auth/themes/text_theme.dart';
 import 'package:http/http.dart' as http;
@@ -33,8 +32,10 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
       'Authorization': basicAuth,
       'Content-Type': 'application/json'
     };
-    var request = http.Request('POST',
-        Uri.parse('https://youthgemsapidev.ab-acus.com/login_wearable'));
+    String baseUrl = kReleaseMode
+        ? 'https://youthgemsapi.ab-acus.com'
+        : 'https://youthgemsapidev.ab-acus.com';
+    var request = http.Request('POST', Uri.parse('$baseUrl/login_wearable'));
     request.headers.addAll(headers);
 
     http.StreamedResponse response = await request.send();
@@ -50,31 +51,39 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
           padding: const EdgeInsets.all(12.0),
           child: Form(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset("assets/logo_youthgems.png",
-                      width:
-                          responsiveImageWidth > 500 ? 500 : responsiveImageWidth,
+                      width: responsiveImageWidth > 500
+                          ? 500
+                          : responsiveImageWidth,
                       fit: BoxFit.fitWidth),
                 ),
                 Text(
-                  'YouthGEMs Wear Auth',
-                  style: textTheme.titleLarge,
+                  'wearAuthPage'.tr(),
+                  style: textTheme.titleMedium,
+                  textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 18),
+                const SizedBox(height: 10),
+                Text(
+                  'insertCredentials'.tr(),
+                  style: textTheme.bodyMedium,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 25),
                 CustomTextField(
                   controller: usernameController,
-                  hintText: 'Enter your username',
-                  labelText: 'Username',
+                  hintText: 'enterUsername'.tr(),
+                  labelText: 'username'.tr(),
                 ),
                 const SizedBox(height: 18),
                 CustomTextField(
                   controller: passwordController,
                   obscureText: isPasswordObscured,
-                  labelText: 'Password',
-                  hintText: 'Enter your password',
+                  labelText: 'password'.tr(),
+                  hintText: 'enterPassword'.tr(),
                 ),
                 const SizedBox(height: 18),
                 Align(
@@ -82,18 +91,17 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                   child: ElevatedButton(
                     onPressed: () async {
                       final success = await authenticate();
-                      if(!context.mounted){
+                      if (!context.mounted) {
                         return;
                       }
                       if (success) {
                         context.replace('/${widget.authRequest}/success');
                       } else {
-                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                            content: Text(
-                                'There was an error.\nPlease check your credentials and try again.')));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text('errorCredentials'.tr())));
                       }
                     },
-                    child: const Text('Login'),
+                    child: Text('login'.tr()),
                   ),
                 ),
               ],
